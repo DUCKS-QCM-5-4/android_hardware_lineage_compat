@@ -701,6 +701,24 @@ cc_library_shared {
 }
 
 cc_library_shared {
+    name: "libdisplayqos_shim",
+    compile_multilib: "64",
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-fvisibility=hidden",
+    ],
+    shared_libs: [
+        "libdl",
+        "liblog",
+    ],
+    srcs: [
+        "libdisplayqos/libdisplayqos_shim.cpp",
+    ],
+    vendor: true,
+}
+
+cc_library_shared {
     name: "libsensor_vendor",
     srcs: [
         "libsensor/Sensor.cpp",

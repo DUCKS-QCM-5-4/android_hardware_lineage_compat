@@ -686,6 +686,21 @@ cc_library_shared {
 }
 
 cc_library_shared {
+    name: "libqcodec2_vp8_mpeg2_shim",
+    compile_multilib: "32",
+    shared_libs: [
+        "liblog",
+    ],
+    srcs: [
+        "libqcodec2/QC2V4L2CodecEntries.cpp",
+    ],
+    shared_libs: [
+        "libqcodec2_v4l2codec",
+    ],
+    vendor: true,
+}
+
+cc_library_shared {
     name: "libsensor_vendor",
     srcs: [
         "libsensor/Sensor.cpp",
